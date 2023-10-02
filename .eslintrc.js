@@ -5,4 +5,9 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   extends: ['airbnb-typescript'],
+  rules: {
+    'react/jsx-filename-extension': 'off',
+    'import/extensions': 'off',
+    'import/no-extraneous-dependencies': 'off',
+  },
 };

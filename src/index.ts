@@ -26,11 +26,22 @@ function when(date1: Date, date2: Date): number {
 }
 
 // Challenge 4
-function formatPhone(phone: string): string {
-  const areaCode = phone.slice(0, 3);
-  const firstThree = phone.slice(3, 6);
-  const lastFour = phone.slice(6, 10);
-  return `(${areaCode}) ${firstThree}-${lastFour}`;
+export function formatPhone(phone: string): string {
+  if (phone.length !== 10) {
+    throw new Error('Phone number is too short, needs to be length of 10');
+  } else if (isNaN(Number(phone))) {
+    throw new Error('Phone number must be a number');
+  }
+
+  try {
+    const areaCode = phone.slice(0, 3);
+    const firstThree = phone.slice(3, 6);
+    const lastFour = phone.slice(6, 10);
+    return `(${areaCode}) ${firstThree}-${lastFour}`;
+  } catch (error) {
+    console.log(error);
+    throw new Error('Error formatting phone number');
+  }
 }
 
 // Console logs
