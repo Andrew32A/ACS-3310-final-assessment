@@ -17,4 +17,10 @@ describe('formatPhone', () => {
   it('should throw an error for strings with a length of 10', () => {
     expect(() => formatPhone('abcdefghij')).toThrow();
   });
+
+  it('should throw an error for floats', () => {
+    expect(() =>
+      formatPhone('0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0')
+    ).toThrow();
+  });
 });
