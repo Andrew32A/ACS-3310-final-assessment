@@ -1,5 +1,5 @@
-import data from "./data.json";
-import { capitalizeWords } from "@andrew_dominican/string-lib";
+import data from './data.json';
+import { capitalizeWords } from '@andrew_dominican/string-lib';
 // import { D } from "@andrew_dominican/date-lib"; // Date library isn't typed so it's not working properly
 
 // Challenge 1
@@ -10,9 +10,9 @@ data.forEach((person) => {
 
 // Challenge 2
 const options: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
 };
 
 function formatDate(date: string): string {
@@ -35,19 +35,19 @@ function formatPhone(phone: string): string {
 
 // Console logs
 data.forEach((person) => {
-  console.log("--------------------");
+  console.log('--------------------');
   // Challenge 1
   console.log(person.first_name, person.last_name);
 
   // Challenge 2
-  console.log("Purchased:", formatDate(person.purchased));
+  console.log('Purchased:', formatDate(person.purchased));
 
   // Challenge 3
   const monthsDiff = when(new Date(person.lastpayment), new Date());
-  console.log("Last Payment:", `${monthsDiff} months ago`);
+  console.log('Last Payment:', `${monthsDiff} months ago`);
 
   // Challenge 4
-  console.log("Phone:", formatPhone(person.phone));
+  console.log('Phone:', formatPhone(person.phone));
 
-  console.log("--------------------");
+  console.log('--------------------');
 });
