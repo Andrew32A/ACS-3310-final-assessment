@@ -49,8 +49,10 @@ exports.formatPhone = formatPhone;
 // Console logs
 data_json_1.default.forEach((person) => {
     console.log('--------------------');
-    // Challenge 1
+    // Challenge 1, first and last name were capitalized in the forEach above. For the following eg. make and model, I'll call it manually.
     console.log(person.first_name, person.last_name);
+    // Make and model
+    console.log((0, string_lib_1.capitalizeWords)(person.make), (0, string_lib_1.capitalizeWords)(person.model));
     // Challenge 2
     console.log('Purchased:', formatDate(person.purchased));
     // Challenge 3
@@ -58,5 +60,7 @@ data_json_1.default.forEach((person) => {
     console.log('Last Payment:', `${monthsDiff} months ago`);
     // Challenge 4
     console.log('Phone:', formatPhone(person.phone));
+    // City
+    console.log('City:', (0, string_lib_1.capitalizeWords)(person.city));
     console.log('--------------------');
 });

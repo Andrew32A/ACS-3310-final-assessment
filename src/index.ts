@@ -47,8 +47,11 @@ export function formatPhone(phone: string): string {
 // Console logs
 data.forEach((person) => {
   console.log('--------------------');
-  // Challenge 1
+  // Challenge 1, first and last name were capitalized in the forEach above. For the following eg. make and model, I'll call it manually.
   console.log(person.first_name, person.last_name);
+
+  // Make and model
+  console.log(capitalizeWords(person.make), capitalizeWords(person.model));
 
   // Challenge 2
   console.log('Purchased:', formatDate(person.purchased));
@@ -59,6 +62,9 @@ data.forEach((person) => {
 
   // Challenge 4
   console.log('Phone:', formatPhone(person.phone));
+
+  // City
+  console.log('City:', capitalizeWords(person.city));
 
   console.log('--------------------');
 });
