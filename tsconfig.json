@@ -4,7 +4,8 @@
     "module": "CommonJS",
     "outDir": "./dist",
     "rootDir": "./src",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
   "exclude": [
     "tests/**/*",
